@@ -2,13 +2,16 @@ package com.example.diceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 
+private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        logging()
 
         val rollButton: Button = findViewById(R.id.button)
         rollButton.setOnClickListener {
@@ -17,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         // Do a dice roll when the app starts
         rollDice()
+    }
+
+    private fun logging() {
+        Log.v(TAG, "Hello, world!")
     }
 
     /**
