@@ -34,8 +34,8 @@ import org.junit.runner.RunWith
 class GridListTests : BaseTest() {
 
     @get:Rule
-    var activityRule: ActivityScenarioRule<GridListActivity>
-            = ActivityScenarioRule(GridListActivity::class.java)
+    var activityRule: ActivityScenarioRule<GridListActivity> =
+        ActivityScenarioRule(GridListActivity::class.java)
 
     @Test
     fun `grid_list_content_at_first_position`() {
