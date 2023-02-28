@@ -37,7 +37,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
-                    'proguard-rules.pro'
+                'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -64,6 +64,5 @@ dependencies {
     implementation "androidx.slidingpanelayout:slidingpanelayout:1.2.0-beta01"
     // Coil
     implementation "io.coil-kt:coil:1.1.1"
-
 
 }
