@@ -26,25 +26,20 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.marsphotos.R
 import com.example.marsphotos.ui.screens.HomeScreen
 import com.example.marsphotos.ui.screens.MarsViewModel
 
 @Composable
-fun MarsPhotosApp(modifier: Modifier = Modifier) {
-    Scaffold(
-        modifier = modifier.fillMaxSize(),
-        topBar = { TopAppBar(title = { Text(stringResource(R.string.app_name)) }) }
-    ) {
+fun MarsPhotosApp(viewModel: MarsViewModel, modifier: Modifier = Modifier) {
+    Scaffold(modifier = modifier.fillMaxSize(),
+        topBar = { TopAppBar(title = { Text(stringResource(R.string.app_name)) }) }) {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it),
-            color = MaterialTheme.colors.background
+                .padding(it), color = MaterialTheme.colors.background
         ) {
-            val marsViewModel: MarsViewModel = viewModel()
-            HomeScreen(marsUiState = marsViewModel.marsUiState)
+            HomeScreen(marsUiState = viewModel.marsUiState)
         }
     }
 }
